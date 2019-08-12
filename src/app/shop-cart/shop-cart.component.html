@@ -28,16 +28,16 @@
                             </div>
                         </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input type="number" class="form-control" id="kol">{{porudzbina.length}}
+                        <input type="number" [(ngModel)]="i.kolicina" (ngModelChange)="ukupnaCena()" class="form-control" id="kol">
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>{{i.cena}}</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong></strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>{{i.cena*i.kolicina}}</strong></td>
                         <td class="col-sm-1 col-md-1">
                         <button type="button" class="btn btn-danger" (click)="delete(i)">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
+                            <span class="fa fa-remove"></span> Remove
                         </button></td>
                     </tr>
-                 
+
                     <tr>
                         <td>   </td>
                         <td>   </td>
@@ -74,3 +74,4 @@
         </div>
     </div>
 </div>
+<div class="alert alert-danger" *ngIf ='showDeletedMessage'>Proizvod je obrisan</div>

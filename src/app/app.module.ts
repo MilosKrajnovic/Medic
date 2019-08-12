@@ -7,6 +7,10 @@ import {AngularFontAwesomeModule} from 'angular-font-awesome'
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +27,8 @@ import { GalerijaComponent } from './galerija/galerija.component';
 import { ONamaComponent } from './o-nama/o-nama.component';
 import { CurrentBlogComponent } from './blog/current-blog/current-blog.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { environment } from 'src/environments/environment';
+import { ModalBlogComponent } from './modal-blog/modal-blog.component';
 
 
 @NgModule({
@@ -40,7 +46,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     GalerijaComponent,
     ONamaComponent,
     CurrentBlogComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ModalBlogComponent
   ],
   imports: [
     BrowserModule,
@@ -52,10 +59,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD1kkUtBsge1k6hPsdwTtM2xlF1zousILo'
     }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    ReactiveFormsModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [AuthService, DomZdravljaService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalBlogComponent]
 })
 export class AppModule { }
 

@@ -10,15 +10,15 @@ import { AuthService } from '../auth.service';
 })
 export class BlogComponent implements OnInit {
 
-  postoviNiz = [];
+  postoviNiz:any [];//
   constructor(private dz: DomZdravljaService, private router:Router, private authService: AuthService) { }
 
-  
+
 dodajBlog(){
   this.router.navigate(['/blogPost'])
 }
-  
-get(){
+
+/*get(){
   this.dz.getPosts()
   .subscribe(
     (response) => {
@@ -26,9 +26,16 @@ get(){
     },
     (error) => console.log(error)
   )
-}
+}*/
 
-ngOnInit() {  this.get();
+
+ngOnInit() { // this.get();
+  this.dz.getImageDetailList();
+  this.dz.imageDetailList.snapshotChanges().subscribe(
+    list => {
+    this.postoviNiz=  list.map(item => {return item.payload.val();})
+    }
+  )
 }
 
 }

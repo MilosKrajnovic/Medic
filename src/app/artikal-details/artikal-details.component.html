@@ -1,15 +1,19 @@
 <h1 class="bg">Apoteka Online</h1>
-  
+
   <div class='container'>
     <img class="slika" src="{{ovajArtikal?.slik}}" alt="{{ovajArtikal?.ime}}">
     <h1>{{ovajArtikal?.ime}}</h1>
     <p style="font-size: 26px; font-weight: bold">{{ovajArtikal?.cena}} RSD <span><i class="fa fa-tag"></i></span> </p>
-    <label for="kolicina"> Kolicina:</label> <input id="kolicina" [(ngModel)]="broj" name="broj" type="number"  
-    class='form-control' >  <br> <button  (click)="staviUKorpu(ovajArtikal,broj)" class="btn btn-primary">Add to cart</button>
+    <ng-template [ngIf]= "authService.prijavljen()">
+    <label for="kolicina"> Kolicina:</label> <input id="kolicina" [(ngModel)]="broj" name="broj" type="number"
+    class='form-control' >  <br>
+
+    <button  (click)="staviUKorpu(ovajArtikal)" class="btn btn-primary">Add to cart</button>
+
+  </ng-template>
     <p>Sifra proizvoda: {{ovajArtikal?.sifra}} <span style="font-size: 26px;"><i class="fa fa-barcode"></i></span></p>
     <h4>Opis proizvoda:</h4>
     <p>{{ovajArtikal?.opis}}</p>
   </div>
 
 
-        

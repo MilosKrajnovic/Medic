@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'signup',component: SingupComponent},
   { path: 'signin',component: SigninComponent},
   { path: 'artikal',component: ArtikalDetailsComponent},
-  { path: 'viewCart',component: ShopCartComponent , canActivate:[GuardService]},
+  { path: 'viewCart',component: ShopCartComponent,canActivate:[GuardService]},
   { path: 'blog',component: BlogComponent},
   { path: 'galerija',component: GalerijaComponent},
   { path: 'oNama',component: ONamaComponent},

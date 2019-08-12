@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DomZdravljaService } from 'src/app/dom-zdravlja.service';
 import { AuthService } from 'src/app/auth.service';
 import { Blog } from '../blog.model';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+
 
 @Component({
   selector: 'dz-current-blog',
@@ -10,18 +12,16 @@ import { Blog } from '../blog.model';
 })
 export class CurrentBlogComponent implements OnInit {
 
-  @Input() post: Blog;
+  @Input() post: any;
 
-  constructor(private dz:DomZdravljaService, authService:AuthService) { }
+
+  constructor( authService:AuthService, private dz:DomZdravljaService) { }
+
+
+
 
   ngOnInit() {
   }
- /* saveChanges(){
-    this.dz.savePosts(this.post)
-  .subscribe(
-    (response) => console.log(response),
-    (error) => console.log(error)
-  )
-}*/
+
 
 }

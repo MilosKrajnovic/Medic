@@ -13,10 +13,10 @@ export class AppComponent implements OnInit{
 
 constructor(private authService: AuthService, private router:Router){}
 ngOnInit(){
-firebase.initializeApp({
+/*firebase.initializeApp({
   apiKey:"AIzaSyBT_4_8r9oSSXzZpuTjvM0HxR9p6Sbolnc",
   authDomain:"domzdravlja-1c736.firebaseapp.com"
-});
+});*/
 }
 signOut(){
   this.authService.signout();

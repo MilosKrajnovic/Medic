@@ -25,13 +25,13 @@
                     </a>
                   </ng-template>
                 </ngb-carousel>
-                
+
                 <hr>
                 -->
 
-              
+
 <div >
-  
+
 </div>
 <div id="bigdiv" class="container py-3 bg-dark" >
         <div class="carousel slide" data-ride="carousel" id="multi_item">
@@ -111,8 +111,8 @@
               </div>
             </div>
           </div>
-        
-      
+
+
           <div class="divcar" >
           <a class="carousel-control-prev" href="#multi_item" role="button" data-slide="prev">
               <i class="fa fa-chevron-circle-left"></i>
@@ -125,7 +125,7 @@
               <span class="sr-only">Next</span>
             </a>
         </div>
-          
+
           <div id="car-indicators">
               <ol class="carousel-indicators">
                 <li data-target="#multi_item" data-slide-to="0" class="active"></li>
@@ -136,7 +136,7 @@
       </div>
 
       <div class="text-center video ">
-        <video controls src="../../../assets/video/Prvi ginekološki pregled.mp4">
+        <video controls src="../../../assets/video/Prvi ginekoloski pregled.mp4">
         </video>
 
         <table>
@@ -184,7 +184,7 @@
   <div class="galerijaDiv" >
       <a href="assets/img/gallery/1.jpg" data-lightbox="gal"><img class="gal" src="assets/img/gallery/1.jpg" alt="Image 1"></a>
       <a href="assets/img/gallery/2.jpg" data-lightbox="gal"><img class="gal" src="assets/img/gallery/2.jpg" alt="Image 2"></a>
-      <a href="assets/img/gallery/3.jpg" data-lightbox="gallery"><img class="gal" src="assets/img/gallery/3.jpg" alt="Image 3"></a>
+      <a href="assets/img/gallery/3.jpg" data-lightbox="gal"><img class="gal" src="assets/img/gallery/3.jpg" alt="Image 3"></a>
        <br>
       <a href="assets/img/gallery/4.jpg" data-lightbox="gal"><img class="gal" src="assets/img/gallery/4.jpg" alt="Image 4"></a>
       <a href="assets/img/gallery/5.jpg" data-lightbox="gal"><img class="gal" src="assets/img/gallery/5.jpg" alt="Image 5"></a>
@@ -211,7 +211,7 @@
   <!---Kraj about-->
     <!--Forma-->
      <div class="row forma">
-      
+
        <div class="col-md-4 text-left pt-2 adresa">
         <h3>Adresa</h3>
       <p>Novi Sad,Čerevićka 40<br>
@@ -224,16 +224,16 @@
        </p>
        </div>
           <div class="col-md-8 text-right">
-      
-          
-          
+
+
+
           <form role="form" class="contact-form"  #forma="ngForm" novalidate (ngSubmit)="onSubmit()" >
-           
+
         <div class="form-group">
             <i class="fa fa-user" ></i> <label for="name">Ime:</label>
-            <input type="text" class="form-control" name="ime" id="ime" placeholder="Unesite ime" ngModel #ime="ngModel" required> 
+            <input type="text" class="form-control" name="ime" id="ime" placeholder="Unesite ime" ngModel #ime="ngModel" required>
             <div *ngIf="ime.errors && (ime.dirty || ime.touched)" class="alert alert-danger col-md-10">
-                <div [hidden]="!ime.errors.required">Unesite ime.</div> 
+                <div [hidden]="!ime.errors.required">Unesite ime.</div>
             </div>
           </div>
         <div class="form-group">
@@ -243,48 +243,36 @@
               <div [hidden]="!email.errors.required">Unesite email.</div>
               <div [hidden]="!email.errors.email">Unesite validan email.</div>
        </div>
-  </div>  
+  </div>
         <div class="form-group">
           <i class="fa fa-phone"></i><label for="mobile">Telefon :</label>
-          <input type="tel" class="form-control" name="tel" id="tel"  placeholder="Unesite broj telefona" ngModel #tel="ngModel" required>  
+          <input type="tel" class="form-control" name="tel" id="tel"  placeholder="Unesite broj telefona" ngModel #tel="ngModel" required>
         <div *ngIf="tel.errors && (tel.dirty || tel.touched)" class="alert alert-danger col-md-10">
             <div [hidden]="!tel.errors.required">Unesite broj telefona.</div>
           </div>
         </div>
-        
+
         <div class="form-group">
           <label for="messages">Message :</label>
         <textarea class="form-control" name="message" id="message" rows="2"></textarea>
-            
+
         </div>
-      
-      
+
+
         <button class="btn btn-dark text-light" type="submit" [disabled]="!forma.form.valid">Submit</button>
 
           </form>
-  
+
           </div>
 
           <!--Kraj forme-->
-          
-        
-      
-
-      
 
 
+       <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=cerevicka%2040&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/"></a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
 
 
-
-      
-
-
-
-      <!---- <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=cerevicka%2040&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/"></a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div> 
-      
-    
       <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onLocation($event)">
             <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
           </agm-map>
-          ---> 
+
           </div>
